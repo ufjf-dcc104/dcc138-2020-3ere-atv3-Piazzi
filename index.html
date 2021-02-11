@@ -13,10 +13,10 @@
 
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext("2d");
-        const soldier = new Image('img');
-        soldier.src ="assets/crossbowman.png";
+        const crossbowman = new Image('img');
+        crossbowman.src ="assets/crossbowman.png";
 
-        soldier.addEventListener("load", finishedLoading)
+        //soldier.addEventListener("load", finishedLoading)
         let l = 2;
         let c = 1;
 
@@ -58,7 +58,7 @@
             quadro = (quadro >= POSES[pose].qmax - 1) ? 0 : 
             quadro + POSES[pose].pv * dt;
 
-            ctx.drawImage(soldier, 
+            ctx.drawImage(crossbowman, 
             //sx, sy, sw, sh
             Math.floor(quadro)*64, pose*64, 64, 64,
             //dx, dy, dw, dh
