@@ -14,13 +14,20 @@
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext("2d");
         const soldier = new Image('img');
-        soldier.src ="assets/soldier.png";
+        soldier.src ="assets/crossbowman.png";
 
         soldier.addEventListener("load", finishedLoading)
-
+        let l = 2;
+        let c = 1;
+    
         function finishedLoading()
         {
-            ctx.drawImage(soldier, 0, 0);
+            ctx.drawImage(soldier, 
+            //sx, sy, sw, sh
+            c*64, l*64, 64, 64,
+            //dx, dy, dw, dh
+            0, 0, 64, 64
+            );
         }
 
         ctx.fillStyle = "grey";
