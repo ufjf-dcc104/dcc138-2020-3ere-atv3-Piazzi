@@ -12,9 +12,14 @@
     <script>
 
         const canvas = document.querySelector('canvas');
+        canvas.width = 1000;
+        canvas.height = 1000;
         const ctx = canvas.getContext("2d");
         const crossbowman = new Image('img');
         crossbowman.src ="assets/crossbowman.png";
+
+        let stage = new Image('img');
+        stage.src = "assets/stage-1.png"
 
         //soldier.addEventListener("load", finishedLoading)
         let l = 2;
@@ -62,7 +67,7 @@
             //sx, sy, sw, sh
             Math.floor(quadro)*64, pose*64, 64, 64,
             //dx, dy, dw, dh
-            0, 0, 64, 64
+            100, 180, 64, 64
             );
 
             requestAnimationFrame(passo);
@@ -70,8 +75,7 @@
         }
 
         function desenhaFundo() {
-            ctx.fillStyle = "grey";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(stage,0,0);
         }
         
 
