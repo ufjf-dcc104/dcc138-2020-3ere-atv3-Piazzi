@@ -13,9 +13,18 @@
     <script>
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext("2d");
+        const soldier = document.querySelector('img');
 
-        ctx.fillStyle = "green";
+        soldier.addEventListener("load", finishedLoading)
+
+        function finishedLoading()
+        {
+            ctx.drawImage(soldier, 0, 0);
+        }
+
+        ctx.fillStyle = "grey";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     </script>
 </body>
 </html>
