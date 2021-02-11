@@ -8,37 +8,38 @@
     <title>Metal JSLUG</title>
 </head>
 <body>
-    <h1>Exemplo 02 - Metal JSLUG</h1>
+    <h1 style="float: left;">Exemplo 02 - Metal JSLUG</h1>
     <canvas></canvas>
     <script>
 
         const canvas = document.querySelector('canvas');
-        canvas.width = 2000;
-        canvas.height = 2000;
+        canvas.width = 1800;
+        canvas.height = 1800;
         const ctx = canvas.getContext("2d");
-        const crossbowman = new Image('img');
-        crossbowman.src ="assets/crossbowman.png";
+        const biker = new Image('img');
+        biker.src ="assets/miner.png";
 
         let stage = new Image('img');
         stage.src = "assets/stage-1.png"
 
         //soldier.addEventListener("load", finishedLoading)
-        let l = 2;
-        let c = 1;
-
-        let pose = 0;
+        let l = 0;
+        let c = 0;
+        let pose = 2;
         let quadro = 0;
+        
         const POSES = [
+            {qmax: 9, pv: 9},
+            {qmax: 10, pv: 9},
+            {qmax: 7, pv: 9},
+            /*
+            {qmax: 7, pv: 9}, 
             {qmax: 7, pv: 9},
             {qmax: 7, pv: 9},
             {qmax: 7, pv: 9},
             {qmax: 7, pv: 9}, 
+            {qmax: 9, pv: 9},
             {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9},
-            {qmax: 8, pv: 9}, 
-            {qmax: 9, pv: 9},
-            {qmax: 9, pv: 9},
             {qmax: 9, pv: 9},
             {qmax: 9, pv: 9},
             {qmax: 6, pv: 9},
@@ -49,7 +50,7 @@
             {qmax: 13, pv: 27},
             {qmax: 13, pv: 27},
             {qmax: 13, pv: 27},
-            {qmax: 6, pv: 9}
+            {qmax: 6, pv: 9}*/
         ]
 
         let t0;
@@ -64,11 +65,11 @@
             quadro = (quadro >= POSES[pose].qmax - 1) ? 0 : 
             quadro + POSES[pose].pv * dt;
 
-            ctx.drawImage(crossbowman, 
+            ctx.drawImage(biker, 
             //sx, sy, sw, sh
-            Math.floor(quadro)*64, pose*64, 64, 64,
+            Math.floor(quadro)*50, pose*50, 50, 70,
             //dx, dy, dw, dh
-            100, 180, 64, 64
+            100, 180, 50, 70
             );
 
             requestAnimationFrame(passo);
