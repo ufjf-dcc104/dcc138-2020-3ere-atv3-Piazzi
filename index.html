@@ -9,11 +9,12 @@
 <body>
     <h1>Exemplo 02</h1>
     <canvas></canvas>
-    <img src="assets/soldier.png" alt="" srcset="">
     <script>
+
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext("2d");
-        const soldier = document.querySelector('img');
+        const soldier = new Image('img');
+        soldier.src ="assets/soldier.png";
 
         soldier.addEventListener("load", finishedLoading)
 
