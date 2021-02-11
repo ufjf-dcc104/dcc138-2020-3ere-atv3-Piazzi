@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MetalSlug'; /*a name to be used later*/
+    src: url('fonts/Metal_Slug_Latino_Regular.ttf'); /*URL to font*/
+}
+
+h1 { 
+    font-family: 'MetalSlug';
+}
+
