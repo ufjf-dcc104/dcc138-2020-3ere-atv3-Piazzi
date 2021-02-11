@@ -55,6 +55,7 @@
 
         let t0;
         let dt;
+        let dx = 1450;
 
         requestAnimationFrame(passo);
         function passo(t) {
@@ -69,8 +70,12 @@
             //sx, sy, sw, sh
             Math.floor(quadro)*60, pose*72, 60, 72,
             //dx, dy, dw, dh
-            100, 180, 60, 72
+            dx, 156, 60, 72
             );
+
+            dx -= 3;
+            if(dx <= -100)
+            dx = 1450;
 
             requestAnimationFrame(passo);
             t0 = t;
