@@ -17,7 +17,7 @@
         canvas.height = 1800;
         const ctx = canvas.getContext("2d");
         const biker = new Image('img');
-        biker.src ="assets/miner.png";
+        biker.src ="assets/biker.png";
 
         let stage = new Image('img');
         stage.src = "assets/stage-1.png"
@@ -25,12 +25,12 @@
         //soldier.addEventListener("load", finishedLoading)
         let l = 0;
         let c = 0;
-        let pose = 2;
+        let pose = 1;
         let quadro = 0;
         
         const POSES = [
-            {qmax: 9, pv: 9},
-            {qmax: 10, pv: 9},
+            {qmax: 5, pv: 9},
+            {qmax: 5, pv: 9},
             {qmax: 7, pv: 9},
             /*
             {qmax: 7, pv: 9}, 
@@ -67,9 +67,9 @@
 
             ctx.drawImage(biker, 
             //sx, sy, sw, sh
-            Math.floor(quadro)*50, pose*50, 50, 70,
+            Math.floor(quadro)*60, pose*72, 60, 72,
             //dx, dy, dw, dh
-            100, 180, 50, 70
+            100, 180, 60, 72
             );
 
             requestAnimationFrame(passo);
